@@ -29,9 +29,9 @@ jobs:
                   sudo apt-get install checkstyle
                   sudo apt-get install unzip
                   wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.3/checkstyle-10.3-all.jar
-                  unzip checkstyle-10.3-all.jar
+                  
 
             - name: Run checkstyle
-              run: checkstyle -c checkstyle.xml
+              run: java -jar checkstyle-10.3-all.jar -c checkstyle.xml src/
 
         
