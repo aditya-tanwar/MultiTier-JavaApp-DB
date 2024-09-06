@@ -1,14 +1,14 @@
 name: Lint the java code
 
-on:
-    push:
-        branches:
-            - main
-            - develop
-    pull_request:
-        branches:
-            - main
-            - develop 
+on: [push, pull_request]
+    # push:
+    #     branches:
+    #         - main
+    #         - develop
+    # pull_request:
+    #     branches:
+    #         - main
+    #         - develop 
 
 jobs:
     lint:
