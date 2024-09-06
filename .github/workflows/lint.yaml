@@ -32,6 +32,6 @@ jobs:
                   
 
             - name: Run checkstyle
-              run: java -jar checkstyle-10.3-all.jar -c checkstyle.xml src/
+              run: java -jar checkstyle-10.3-all.jar -c /google_checks.xml src/
 
         
