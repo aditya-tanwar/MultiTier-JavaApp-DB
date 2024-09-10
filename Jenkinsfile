@@ -23,12 +23,24 @@ pipeline {
         }
 
 
-        // stage('Trivy Filesystem Scan') {
-        //     steps {
-        //         sh 'ls && pwd'
-        //         sh 'trivy fs . --format json'
-        //     }
-        // }
+        stage('compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'mvn test -DskipTests=true'
+            }
+        }
+
+        stage('Trivy Filesystem Scan') {
+            steps {
+                sh 'ls && pwd'
+                sh 'trivy fs --format table -o fs-trivy-report.html .'
+            }
+        }
 
 
         // stage('SonarQube Code Analysis') {
