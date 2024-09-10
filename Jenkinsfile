@@ -26,7 +26,7 @@ pipeline {
         stage('Trivy Filesystem Scan') {
             steps {
                 sh 'ls && pwd'
-                sh 'trivy fs . --format json --output Test-Results/trivy-results.json'
+                sh 'trivy fs . --format json'
             }
         }
 
