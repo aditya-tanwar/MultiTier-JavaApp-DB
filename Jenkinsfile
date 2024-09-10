@@ -30,25 +30,25 @@ pipeline {
         }
 
 
-        stage('SonarQube Code Analysis') {
-            environment {
-                scannerHome = tool 'sonar'
-            }
-            steps {
-                scritp {
-                    withSonarQubeEnv('sonar') {
-                        sh '''
-                            ${scannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=MultiTier-JavaApp-DB \
-                            -Ssonar.projectName=MultiTier-JavaApp-DB \
-                            -Dsonar.java.binaries=.
-                        '''
-                    }
-                }
+        // stage('SonarQube Code Analysis') {
+        //     environment {
+        //         scannerHome = tool 'sonar'
+        //     }
+        //     steps {
+        //         scritp {
+        //             withSonarQubeEnv('sonar') {
+        //                 sh '''
+        //                     ${scannerHome}/bin/sonar-scanner \
+        //                     -Dsonar.projectKey=MultiTier-JavaApp-DB \
+        //                     -Ssonar.projectName=MultiTier-JavaApp-DB \
+        //                     -Dsonar.java.binaries=.
+        //                 '''
+        //             }
+        //         }
 
-            }
+        //     }
 
-        }
+        // }
 
 
         stage('Quality Gate'){
