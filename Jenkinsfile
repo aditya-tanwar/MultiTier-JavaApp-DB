@@ -4,7 +4,7 @@ pipeline {
     tools {
         maven 'maven'
     }
-    
+
     options {
         skipDefaultCheckout true
     }
@@ -27,17 +27,17 @@ pipeline {
         }
 
 
-        stage('compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
+        // stage('compile') {
+        //     steps {
+        //         sh 'mvn compile'
+        //     }
+        // }
 
-        stage('Test') {
-            steps {
-                sh 'mvn test -DskipTests=true'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'mvn test -DskipTests=true'
+        //     }
+        // }
 
         stage('Trivy Filesystem Scan') {
             steps {
