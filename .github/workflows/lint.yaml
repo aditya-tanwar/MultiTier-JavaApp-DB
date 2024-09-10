@@ -9,7 +9,9 @@ on: [push, pull_request]
     #     branches:
     #         - main
     #         - develop 
-
+permissions: 
+    actions: read 
+    
 jobs:
     lint:
         runs-on: ubuntu-latest
@@ -47,5 +49,6 @@ jobs:
               uses: github/codeql-action/upload-sarif@v3
               with:
                 sarif_file: 'trivy-results.sarif'
+              continue-on-error: true
 
         
