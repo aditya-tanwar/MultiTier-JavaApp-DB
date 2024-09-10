@@ -23,12 +23,12 @@ pipeline {
         }
 
 
-        stage('Trivy Filesystem Scan') {
-            steps {
-                sh 'ls && pwd'
-                sh 'trivy fs . --format json'
-            }
-        }
+        // stage('Trivy Filesystem Scan') {
+        //     steps {
+        //         sh 'ls && pwd'
+        //         sh 'trivy fs . --format json'
+        //     }
+        // }
 
 
         // stage('SonarQube Code Analysis') {
